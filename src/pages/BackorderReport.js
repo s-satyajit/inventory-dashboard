@@ -44,7 +44,7 @@ const BackorderReport = ({ data }) => {
   };
 
   return (
-    <div>
+    <div className="p-8 bg-slate-300 rounded-lg shadow-md">
       <h2 className="text-2xl font-bold mb-4">Backorder Report</h2>
       <div className="mb-4">
       <label className="block text-sm font-medium text-gray-700">Filter by Category:</label>

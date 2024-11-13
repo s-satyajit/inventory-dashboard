@@ -13,6 +13,7 @@ const SummaryPage = ({ data }) => {
 
   const filteredData = data.filter((item) => {
     const orderDate = new Date(item.OrderDate); 
+
     return orderDate >= startDate && orderDate <= endDate;
   });
 
@@ -28,7 +29,7 @@ const SummaryPage = ({ data }) => {
   const totalAvailableQuantity = filteredData.reduce((sum, item) => sum + item.AvailableQuantity, 0);
 
   return (
-    <div className="p-6 bg-gray-100 rounded-lg shadow-md">
+    <div className="p-6 bg-slate-300 rounded-lg shadow-md">
       <h2 className="text-3xl font-bold mb-6">Inventory Summary</h2>
       <div className="flex items-center mb-6">
         <div className="mr-4">
@@ -49,7 +50,7 @@ const SummaryPage = ({ data }) => {
         </div>
       </div>
 
-      <div className="bg-white shadow overflow-hidden sm:rounded-lg mb-6 p-6">
+      <div className="bg-slate-200 shadow overflow-hidden sm:rounded-lg mb-6 p-6">
         <h3 className="text-xl font-bold mb-4">Key Data Points</h3>
         <p>Total Warehouses: {totalWarehouses}</p>
         <p>Total Categories: {totalCategories}</p>
@@ -61,16 +62,19 @@ const SummaryPage = ({ data }) => {
         <p>Total Available Quantity: {totalAvailableQuantity}</p>
       </div>
 
-      <div className="bg-white shadow overflow-hidden sm:rounded-lg mb-6 p-6">
+      <div className="bg-slate-200 shadow overflow-hidden sm:rounded-lg mb-6 p-6">
         <h3 className="text-xl font-bold mb-4">Graphs</h3>
         <ShippedReceivedChart data={filteredData} />
+        <br/>
         <VendorWiseChart data={filteredData} />
+        <br/>
         <CategoryWiseChart data={filteredData} />
       </div>
 
-      <div className="bg-white shadow overflow-hidden sm:rounded-lg mb-6 p-6">
+      <div className="bg-slate-200 shadow overflow-hidden sm:rounded-lg mb-6 p-6">
         <h3 className="text-xl font-bold mb-4">Tables</h3>
         <CategoryWiseTable data={filteredData} />
+        <br/>
         <WarehouseWiseTable data={filteredData} />
       </div>
     </div>

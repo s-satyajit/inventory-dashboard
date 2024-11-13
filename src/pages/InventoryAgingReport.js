@@ -46,7 +46,7 @@ const InventoryAgingReport = ({ data }) => {
   });
 
   return (
-    <div className="p-6 bg-gray-100 rounded-lg shadow-md">
+    <div className="p-6 bg-slate-300 rounded-lg shadow-md">
       <h2 className="text-3xl font-bold mb-6">Inventory Aging Report</h2>
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-2">Category:</label>
@@ -59,6 +59,7 @@ const InventoryAgingReport = ({ data }) => {
             <option key={category} value={category}>{category}</option>
           ))}
         </select>
+        <br/> <br/>
       </div>
       <div className="mb-6">
         <div className="bg-white p-6 rounded-lg shadow-lg"> 

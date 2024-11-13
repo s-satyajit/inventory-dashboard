@@ -31,7 +31,11 @@ const VendorWiseChart = ({ data }) => {
         ],
     };
 
-    return <Bar data={chartData} />
+    return (
+
+            <Bar className="bg-white p-4 shadow-lg rounded-lg" data={chartData} />
+       
+    )
 };
 
 export default VendorWiseChart;

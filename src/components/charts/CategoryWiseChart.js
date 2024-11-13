@@ -41,7 +41,7 @@ const CategoryWiseChart = ({ data }) => {
     };
 
     return (
-        <div>
+        <div className="bg-white p-4 shadow-lg rounded-lg">
             <select onChange={(e) => setSelectedCategory(e.target.value)} value={selectedCategory}>
                 {categories.map(category => (
                     <option key={category} value={category}>{category}</option>
