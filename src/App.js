@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from "react";
+import ExcelUploader from "./components/ExcelUploader";
+import SummaryPage from "./pages/SummaryPage";
 
-function App() {
+const App = () => {
+
+  const [data, setData] = useState([])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Inventory Dashboard</h1>
+      <ExcelUploader setData={setData} />
+      {data.length > 0 ? <SummaryPage data={data} /> : <p>No data loaded yet.</p>}
     </div>
   );
 }
