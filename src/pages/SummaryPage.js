@@ -3,6 +3,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import ShippedReceivedChart from '../components/charts/ShippedReceivedChart';
 import VendorWiseChart from '../components/charts/VendorWiseChart';
+import CategoryWiseChart from '../components/charts/CategoryWiseChart';
 
 const SummaryPage = ({data}) => {
     const [startDate,  setStartDate] = useState(new Date('2024-01-01'))
@@ -46,6 +47,7 @@ const SummaryPage = ({data}) => {
                 <h3>Graphs</h3>
                 <ShippedReceivedChart data={filteredData} />
                 <VendorWiseChart data={filteredData} />
+                <CategoryWiseChart data={filteredData} />
             </div>
             <div>
                 {/* Tables */}
