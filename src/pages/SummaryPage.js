@@ -4,6 +4,8 @@ import 'react-datepicker/dist/react-datepicker.css';
 import ShippedReceivedChart from '../components/charts/ShippedReceivedChart';
 import VendorWiseChart from '../components/charts/VendorWiseChart';
 import CategoryWiseChart from '../components/charts/CategoryWiseChart';
+import CategoryWiseTable from '../components/tables/CategoryWiseTable';
+import WarehouseWiseTable from '../components/tables/WarehouseWiseTable';
 
 const SummaryPage = ({data}) => {
     const [startDate,  setStartDate] = useState(new Date('2024-01-01'))
@@ -50,7 +52,9 @@ const SummaryPage = ({data}) => {
                 <CategoryWiseChart data={filteredData} />
             </div>
             <div>
-                {/* Tables */}
+                <h3>Tables</h3>
+                <CategoryWiseTable data={filteredData} />
+                <WarehouseWiseTable data={filteredData} />
             </div>
         </div>
     )
