@@ -8,7 +8,11 @@ const ShippedReceivedChart = ({ data }) => {
     const dates = [...new Set(data.map(item => item.OrderDate))];
     const shippedData = dates.map(date => {
         return data.filter(item => item.Status === 'Shipped' && item.OrderDate === date)
-                    .reduce((sum, item) => sum + item.OrderItemQuantity, 0)
+                    .reduce((sum, item) => sum + item.OrderItemQuantity, 0);
+    });
+    const receivedData = dates.map(date => {
+        return data.filter(item => item.Status === 'Rejected' && item.OrderDate === date)
+                    .reduce((sum, item) => sum + item.OrderItemQuantity, 0);
     });
 
     const chartData = {
