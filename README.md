@@ -13,17 +13,17 @@ Welcome to the **Inventory Management Dashboard**! This project is a comprehensi
 - [Contact](#contact)
 
 ## Features
-- **Real-time Inventory Tracking**: Monitor inventory levels, orders, and shipments.
-- **Data Visualization**: Interactive charts and graphs for insightful data analysis.
-- **Custom Reports**: Generate detailed reports for different categories and time periods.
-- **Excel Integration**: Easily upload and export data using Excel files.
+- **Real-time Inventory Tracking:** Monitor inventory levels, orders, and shipments.
+- **Data Visualization:** Interactive charts and graphs for insightful data analysis.
+- **Custom Reports:** Generate detailed reports for different categories and time periods.
+- **Excel Integration:** Easily upload and export data using Excel files.
 
 ## Installation
 To get started with the Inventory Management Dashboard, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/inventory-dashboard.git
+   git clone https://github.com/s-satyajit/inventory-dashboard.git
    ```
 
 
@@ -49,13 +49,13 @@ Once the development server is running, you can access the dashboard at ```http:
 ## Screenshots
 
 ### Technologies Used
-- [React.js](https://react.dev/): Frontend framework for building the user interface.
+- [React.js:](https://react.dev/) Frontend framework for building the user interface.
 
-- [Chart.js](https://www.chartjs.org/): Library for creating interactive charts and graphs.
+- [Chart.js:](https://www.chartjs.org/) Library for creating interactive charts and graphs.
 
-- [Tailwind CSS](https://tailwindcss.com/): Utility-first CSS framework for styling.
+- [Tailwind CSS:](https://tailwindcss.com/) Utility-first CSS framework for styling.
 
-- [XLSX](https://www.npmjs.com/package/xlsx): Library for parsing and writing Excel files.
+- [XLSX:](https://www.npmjs.com/package/xlsx) Library for parsing and writing Excel files.
 
 ## Contributing
 Contributions are welcome! If you'd like to contribute to this project, please fork the repository and use a feature branch. Pull requests are encouraged.
