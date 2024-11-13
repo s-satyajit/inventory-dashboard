@@ -9,7 +9,7 @@ const CategoryWiseTable = ({ data }) => {
     return {
       category,
       totalOrderQuantity: filteredData.reduce((sum, item) => sum + item.OrderItemQuantity, 0),
-      totalAvailableQuantity: filteredData.reduce((sum, item) => sum + item.AvaliableQuantity, 0),
+      totalAvailableQuantity: filteredData.reduce((sum, item) => sum + item.AvailableQuantity, 0),
     };
   });
 
@@ -38,25 +38,26 @@ const CategoryWiseTable = ({ data }) => {
   };
 
   return (
-    <div>
-      <button onClick={exportToExcel}>Export to Excel</button>
-      <table {...getTableProps()}>
-        <thead>
-          {headerGroups.map(headerGroup => (
-            <tr {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map(column => (
-                <th {...column.getHeaderProps()}>{column.render('Header')}</th>
-              ))}
-            </tr>
-          ))}
-        </thead>
-        <tbody {...getTableBodyProps()}>
+    <div className="bg-white p-6 rounded-lg shadow-md">
+      <button 
+        onClick={exportToExcel} 
+        className="mb-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700"
+      >
+        Export to Excel
+      </button>
+      <table {...getTableProps()} className="min-w-full divide-y divide-gray-200">
+      <thead className="bg-gray-50"> 
+        {headerGroups.map(headerGroup => (
+            <tr {...headerGroup.getHeaderGroupProps()} className="bg-gray-50" key={headerGroup.id}> {headerGroup.headers.map(column => ( <th {...column.getHeaderProps()} key={column.id} className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"> {column.render('Header')} </th> ))} </tr> ))} </thead>
+        <tbody {...getTableBodyProps()} className="bg-white divide-y divide-gray-200">
           {rows.map(row => {
             prepareRow(row);
             return (
               <tr {...row.getRowProps()}>
                 {row.cells.map(cell => (
-                  <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                  <td {...cell.getCellProps()} className="px-6 py-4 whitespace-nowrap">
+                    {cell.render('Cell')}
+                  </td>
                 ))}
               </tr>
             );

@@ -9,7 +9,7 @@ const WarehouseWiseTable = ({ data }) => {
     return {
       warehouse,
       totalOrderQuantity: filteredData.reduce((sum, item) => sum + item.OrderItemQuantity, 0),
-      totalAvailableQuantity: filteredData.reduce((sum, item) => sum + item.AvaliableQuantity, 0),
+      totalAvailableQuantity: filteredData.reduce((sum, item) => sum + item.AvailableQuantity, 0),
       shippedItems: filteredData.filter(item => item.Status === "Shipped").length,
       receivedItems: filteredData.filter(item => item.Status === "Received").length,
     };
@@ -42,25 +42,41 @@ const WarehouseWiseTable = ({ data }) => {
   };
 
   return (
-    <div>
-      <button onClick={exportToExcel}>Export to Excel</button>
-      <table {...getTableProps()}>
-        <thead>
+    <div className="bg-white p-6 rounded-lg shadow-md">
+      <button 
+        onClick={exportToExcel} 
+        className="mb-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700"
+      >
+        Export to Excel
+      </button>
+      <table {...getTableProps()} className="min-w-full divide-y divide-gray-200">
+        <thead className="bg-gray-50">
           {headerGroups.map(headerGroup => (
             <tr {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map(column => (
-                <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+                <th 
+                  {...column.getHeaderProps()} 
+                  className="px-6 py-3 text-geft text-xs font-medium text-gray-500 uppercase tracking-wider"
+                >
+                  {column.render('Header')}
+                </th>
               ))}
             </tr>
           ))}
         </thead>
-        <tbody {...getTableBodyProps()}>
+        <tbody {...getTableBodyProps()} className="bg-white divide-y divide-gray-200">
           {rows.map(row => {
             prepareRow(row);
             return (
-              <tr {...row.getRowProps()}>
+              <tr {...row.getRowProps()} key={row.id}>
                 {row.cells.map(cell => (
-                  <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                  <td 
+                    {...cell.getCellProps()}
+                    key={cell.column.id}
+                    className="px-6 py-4 whitespace-nowrap"
+                  >
+                    {cell.render('Cell')}
+                  </td>
                 ))}
               </tr>
             );

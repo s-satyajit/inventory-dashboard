@@ -46,24 +46,32 @@ const InventoryAgingReport = ({ data }) => {
   });
 
   return (
-    <div>
-      <h2>Inventory Aging Report</h2>
+    <div className="p-6 bg-gray-100 rounded-lg shadow-md">
+      <h2 className="text-3xl font-bold mb-6">Inventory Aging Report</h2>
       <div>
-        <label>Category:</label>
-        <select onChange={(e) => setSelectedCategory(e.target.value)} value={selectedCategory}>
+        <label className="block text-sm font-medium text-gray-700 mb-2">Category:</label>
+        <select onChange={(e) => setSelectedCategory(e.target.value)} 
+        value={selectedCategory}
+        className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+        >
           <option value=''>Select Category</option>
           {categories.map(category => (
             <option key={category} value={category}>{category}</option>
           ))}
         </select>
       </div>
-      <div>
-        <Bar data={chartData(categoryAgingData)} />
+      <div className="mb-6">
+        <div className="bg-white p-6 rounded-lg shadow-lg"> 
+            <Bar data={chartData(categoryAgingData)} /> 
+        </div>
       </div>
       {selectedCategory && (
-        <div>
-          <label>Product:</label>
-          <select onChange={(e) => setSelectedProduct(e.target.value)} value={selectedProduct}>
+        <div className="mb-4">
+          <label className="block text-sm font-medium text-gray-700 mb-2">Product:</label>
+          <select onChange={(e) => setSelectedProduct(e.target.value)} 
+          value={selectedProduct}
+          className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+          >
             <option value=''>Select Product</option>
             {products.map(product => (
               <option key={product} value={product}>{product}</option>
@@ -72,7 +80,7 @@ const InventoryAgingReport = ({ data }) => {
         </div>
       )}
       {selectedProduct && (
-        <div>
+        <div className="bg-white p-6 rounded-lg shadow-lg">
           <Bar data={chartData(productAgingData)} />
         </div>
       )}
