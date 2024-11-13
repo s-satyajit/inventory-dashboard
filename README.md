@@ -9,6 +9,7 @@ Welcome to the **Inventory Management Dashboard**! This project is a comprehensi
 - [Screenshots](#screenshots)
 - [Technologies Used](#technologies-used)
 - [Contributing](#contributing)
+- [License](#license)
 - [Contact](#contact)
 
 ## Features
@@ -68,6 +69,9 @@ Contributions are welcome! If you'd like to contribute to this project, please f
 4. Push to the branch ```git push origin feature/your-feature```
 
 5. Open a pull request
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
 
 ## Contact
 Feel free to reach out if you have any questions or suggestions. You can contact me at:
